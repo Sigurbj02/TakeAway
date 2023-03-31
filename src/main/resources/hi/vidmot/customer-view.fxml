@@ -21,14 +21,14 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                     </rowConstraints>
                     <children>
-                        <Label text="Nafn:"/>
-                        <Label text="Heimilisfang:" GridPane.rowIndex="1"/>
-                        <TextField fx:id="fxNafn" GridPane.columnIndex="1"/>
-                        <TextField fx:id="fxHeimilisfang" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="Name:"/>
+                        <Label text="Address:" GridPane.rowIndex="1"/>
+                        <TextField fx:id="fxName" GridPane.columnIndex="1"/>
+                        <TextField fx:id="fxAddress" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                     </children>
                 </GridPane>
                 <Label layoutX="39.0" layoutY="69.0"
-                       text="Vinsamlegast sláið inn nafn og heimilisfang til að gera aðgang">
+                       text="Please type in name and address to make an account">
                     <font>
                         <Font size="14.0"/>
                     </font>
@@ -39,8 +39,8 @@
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0"/>
     </content>
-    <ButtonType fx:id="fxILagi" buttonData="OK_DONE" text="Í lagi"/>
-    <ButtonType fx:id="fxHaettaVid" buttonData="CANCEL_CLOSE" text="Hætta við"/>
+    <ButtonType fx:id="fxOK" buttonData="OK_DONE" text="OK"/>
+    <ButtonType fx:id="fxCancel" buttonData="CANCEL_CLOSE" text="Cancel"/>
     <expandableContent>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="320.0"/>
     </expandableContent>

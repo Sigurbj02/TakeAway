@@ -8,12 +8,12 @@
          prefWidth="317.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11"
          xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label alignment="CENTER" layoutX="87.0" layoutY="14.0" prefHeight="36.0" prefWidth="142.0" text="Matseðill">
+        <Label alignment="CENTER" layoutX="87.0" layoutY="14.0" prefHeight="36.0" prefWidth="142.0" text="Menu">
             <font>
                 <Font name="Constantia Italic" size="24.0"/>
             </font>
         </Label>
-        <ListView fx:id="fxListi" layoutX="18.0" layoutY="50.0" prefHeight="238.0" prefWidth="280.0"
+        <ListView fx:id="fxList" layoutX="18.0" layoutY="50.0" prefHeight="238.0" prefWidth="280.0"
                   styleClass="listview" stylesheets="@styles.css"/>
     </children>
 </fx:root>

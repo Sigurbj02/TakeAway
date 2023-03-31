@@ -14,11 +14,11 @@ import java.io.IOException;
 public class TakeAwayApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(TakeAwayApplication.class.getResource("pontun-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TakeAwayApplication.class.getResource("ordering-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 650, 400);
         stage.setTitle("TakeAway!");
         ViewSwitcher.setScene(scene);
-        ViewSwitcher.switchTo(View.PONTUN);
+        ViewSwitcher.switchTo(View.ORDERING);
         stage.setScene(scene);
         stage.show();
     }

@@ -1,38 +1,30 @@
 package hi.vidmot;
 
-import hi.vinnsla.Vidskiptavinur;
+import hi.vinnsla.Customer;
 import javafx.scene.control.TextInputDialog;
 
 import java.util.Optional;
 
 /**
- * Klasi fyrir dialoginn sem kemur þegar það er notandi nú þegar í kerfinu, og hann skráir sig inn
+ * A class for the dialog that appears when there is already a user in the system
+ * and he signs in
  */
 public class LoginDialog {
-    private Optional<String> utkoma;//útkoma dialogsins þegar lykilorð er slegið inn. Ef tómt, þá null
+    private Optional<String> result;//the result of the dialog when a password is typed in. If password field is empty, this is null
 
-    /**
-     * smiður, tekur inn viskiptavinur. Setur Dialog og upplýsingar. athugar inntak og lokar
-     *
-     * @param vidskiptavinur
-     */
-    public LoginDialog(Vidskiptavinur vidskiptavinur) {
+    public LoginDialog(Customer customer) {
         TextInputDialog d = new TextInputDialog();
-        d.setTitle("Innskráning");
-        d.setHeaderText("Skrá inn viðskiptavin " + vidskiptavinur.nafnProperty().getValue());
-        d.setContentText("Lykilorð: ");
-
-        utkoma = d.showAndWait();
-
+        d.setTitle("Sign in");
+        d.setHeaderText("Sign in as " + customer.nameProperty().getValue());
+        d.setContentText("Password: ");
+        result = d.showAndWait();
         d.close();
     }
 
     /**
-     * athugar hvort lykilorð sem slegið var inn sé gilt
-     *
-     * @return true ef gilt, annars false
+     * checks whether the password that is typed in is valid (basically just present)
      */
-    public boolean giltLykilord() {
-        return utkoma.isPresent() && !utkoma.get().equals("");
+    public boolean passwordIsValid() {
+        return result.isPresent() && !result.get().equals("");
     }
 }

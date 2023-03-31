@@ -4,9 +4,9 @@ package hi.vidmot;
  * @author Almas Baimagambetov (almaslvl@gmail.com)
  */
 public enum View {
-    PONTUN("pontun-view.fxml"),
-    GREIDSLA("greida-view.fxml"),
-    VIDSKIPTAVINUR("vidskiptavinur-view.fxml");
+    ORDERING("ordering-view.fxml"),
+    TRANSACTION("transaction-view.fxml"),
+    CUSTOMER("customer-view.fxml");
     private final String fileName;
 
     View(String fileName) {
