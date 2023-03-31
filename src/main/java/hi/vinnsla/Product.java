@@ -6,13 +6,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 /**
- * this class is called Veitingar, which means food and drinks, but i can't think of a direct translation
+ * this class was called Veitingar, which means food and drinks, but i can't think of a direct translation
  */
-public class Veitingar {
+public class Product {
     private StringProperty product = new SimpleStringProperty();
     private IntegerProperty price = new SimpleIntegerProperty();
 
-    public Veitingar(String product, int price) {
+    public Product(String product, int price) {
         this.product.set(product);
         this.price.set(price);
     }

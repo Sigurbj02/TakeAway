@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Menu {
-    protected ObservableList<Veitingar> veitingar = FXCollections.observableArrayList();
+    protected ObservableList<Product> product = FXCollections.observableArrayList();
 
     /**
      * The String in the method is split up and sorted to make different items on the menu.
@@ -18,12 +18,12 @@ public class Menu {
         String[] menuArray = menuString.split(", ");
         for (int i = 0; i < menuArray.length - 1; i = i + 2) {
             if (menuArray[i].length() <= 30) {
-                veitingar.add(new Veitingar(menuArray[i], Integer.parseInt(menuArray[i + 1])));
+                product.add(new Product(menuArray[i], Integer.parseInt(menuArray[i + 1])));
             }
         }
     }
 
-    public ObservableList<Veitingar> getVeitingar() {
-        return veitingar;
+    public ObservableList<Product> getProducts() {
+        return product;
     }
 }

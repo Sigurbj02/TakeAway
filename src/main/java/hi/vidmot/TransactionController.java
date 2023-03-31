@@ -3,7 +3,7 @@ package hi.vidmot;
 import edu.princeton.cs.algs4.StdRandom;
 import hi.vinnsla.Basket;
 import hi.vinnsla.Customer;
-import hi.vinnsla.Veitingar;
+import hi.vinnsla.Product;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.collections.ListChangeListener;
@@ -20,7 +20,7 @@ public class TransactionController {
     @FXML
     private Label fxDeliveryInformation;
     @FXML
-    private ListView<Veitingar> fxBasket;
+    private ListView<Product> fxBasket;
     @FXML
     private TextField fxTotalPrice;
 
@@ -38,7 +38,7 @@ public class TransactionController {
         basket = new Basket();
         orderingController = (OrderingController) ViewSwitcher.lookup(View.ORDERING);
         customer = orderingController.getCustomer();
-        basketListener();
+        addBasketListener();
         makeInformationBinding();
         makeBasketAndPriceBindings();
     }
@@ -64,9 +64,9 @@ public class TransactionController {
     /**
      * makes a listener which changes the listview when the contents of the basket change
      */
-    private void basketListener() {
-        basket.getVeitingarInBasket().addListener((ListChangeListener<? super Veitingar>) change -> {
-            fxBasket.setItems(basket.getVeitingarInBasket());
+    private void addBasketListener() {
+        basket.getProductsInBasket().addListener((ListChangeListener<? super Product>) change -> {
+            fxBasket.setItems(basket.getProductsInBasket());
         });
     }
 
@@ -74,7 +74,7 @@ public class TransactionController {
      * makes a binding between the baskets in the transaction scene and the ordering scene and for the total price
      */
     private void makeBasketAndPriceBindings() {
-        Bindings.bindContent(basket.getVeitingarInBasket(), orderingController.getBasket().getVeitingarInBasket());
+        Bindings.bindContent(basket.getProductsInBasket(), orderingController.getBasket().getProductsInBasket());
         fxTotalPrice.textProperty().bind(basket.totalPriceProperty().asString().concat(" kr."));
     }
 
@@ -98,7 +98,7 @@ public class TransactionController {
     public void confirm(ActionEvent actionEvent) {
         String message = "The order has been confirmed";
         orderingController.makeDialog(message);
-        orderingController.getBasket().getVeitingarInBasket().clear();
+        orderingController.getBasket().getProductsInBasket().clear();
         ViewSwitcher.switchTo(View.ORDERING);
     }
 

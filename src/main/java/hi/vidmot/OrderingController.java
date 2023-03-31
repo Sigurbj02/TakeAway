@@ -2,7 +2,7 @@ package hi.vidmot;
 
 import hi.vinnsla.Basket;
 import hi.vinnsla.Customer;
-import hi.vinnsla.Veitingar;
+import hi.vinnsla.Product;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ListChangeListener;
@@ -27,7 +27,7 @@ public class OrderingController {
     private Button fxPayButton;//to pay (go to transaction scene)
 
     @FXML
-    private ListView<Veitingar> fxBasket;//shows what's in the basket
+    private ListView<Product> fxBasket;//shows what's in the basket
 
     @FXML
     private MenuView fxMenu;//interface for the custom component showing the menu
@@ -63,8 +63,8 @@ public class OrderingController {
      * sets listeners for text on the login button and for items in the listview for the basket
      */
     private void setListeners() {
-        basket.getVeitingarInBasket().addListener((ListChangeListener<? super Veitingar>) change -> {
-            fxBasket.setItems(basket.getVeitingarInBasket());
+        basket.getProductsInBasket().addListener((ListChangeListener<? super Product>) change -> {
+            fxBasket.setItems(basket.getProductsInBasket());
         });
         loggedIn.addListener((observable, oldVal, newVal) -> {
             loginText();

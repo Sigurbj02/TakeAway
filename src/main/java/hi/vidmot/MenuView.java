@@ -1,7 +1,7 @@
 package hi.vidmot;
 
 import hi.vinnsla.Menu;
-import hi.vinnsla.Veitingar;
+import hi.vinnsla.Product;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
@@ -13,23 +13,17 @@ import java.io.IOException;
  * Custom component for the interface of the menu
  */
 public class MenuView extends AnchorPane {
-
     @FXML
-    private ListView<Veitingar> fxList;//listview for the menu
+    private ListView<Product> fxList;
 
-    /**
-     * constructor. makes a new menu and calls a method to put the items on it. Puts the
-     * menu in the listview object
-     */
     public MenuView() {
         readFXML();
         Menu m = new Menu();
         m.setMenuData();
-        fxList.setItems(m.getVeitingar());
+        fxList.setItems(m.getProducts());
     }
 
-    //getter
-    public ListView<Veitingar> getFxList() {
+    public ListView<Product> getFxList() {
         return fxList;
     }
 

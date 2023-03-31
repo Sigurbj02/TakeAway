@@ -13,8 +13,8 @@ public class Basket extends Menu {
         addListener();
     }
 
-    public ObservableList<Veitingar> getVeitingarInBasket() {
-        return getVeitingar();
+    public ObservableList<Product> getProductsInBasket() {
+        return getProducts();
     }
 
 
@@ -27,17 +27,17 @@ public class Basket extends Menu {
      * or removed from the basket
      */
     private void addListener() {
-        getVeitingar().addListener((ListChangeListener<Veitingar>) change -> {
+        getProducts().addListener((ListChangeListener<Product>) change -> {
             while (change.next()) {
                 if (change.wasAdded()) {
                     for (int i = 0; i < change.getAddedSize(); i++) {
-                        Veitingar added = change.getAddedSubList().get(i);
+                        Product added = change.getAddedSubList().get(i);
                         totalPrice.set(totalPrice.get() + added.getPrice());
                     }
                 }
                 if (change.wasRemoved()) {
                     for (int i = 0; i < change.getRemovedSize(); i++) {
-                        Veitingar removed = change.getRemoved().get(i);
+                        Product removed = change.getRemoved().get(i);
                         totalPrice.set(totalPrice.get() - removed.getPrice());
                     }
 
@@ -46,33 +46,33 @@ public class Basket extends Menu {
         });
     }
 
-    public void removeFromBasket(Veitingar veitingar) {
-        getVeitingar().remove(veitingar);
+    public void removeFromBasket(Product product) {
+        getProducts().remove(product);
     }
 
-    public void addToBasket(Veitingar veitingar) {
-        getVeitingar().add(veitingar);
+    public void addToBasket(Product product) {
+        getProducts().add(product);
     }
 
     /**
-     * Some tests i had to do for the other project at some point. Can be deleted, but may be used for our tests
+     * Some tests I had to do for the other project at some point. Can be deleted, but may be used for our tests
      */
     public static void main(String[] args) {
         Menu menu = new Menu();
         Basket basket = new Basket();
         menu.setMenuData();
         System.out.println("Menu: ");
-        for (int i = 0; i < menu.getVeitingar().size(); i++) {
-            System.out.println(menu.getVeitingar().get(i));
+        for (int i = 0; i < menu.getProducts().size(); i++) {
+            System.out.println(menu.getProducts().get(i));
         }
 
         System.out.println("place items nr 5 and 9 in the basket");
-        basket.addToBasket(menu.getVeitingar().get(5));
-        basket.addToBasket(menu.getVeitingar().get(9));
+        basket.addToBasket(menu.getProducts().get(5));
+        basket.addToBasket(menu.getProducts().get(9));
 
         System.out.println("this is how the basket looks:");
-        for (int i = 0; i < basket.getVeitingarInBasket().size(); i++) {
-            System.out.println(basket.getVeitingarInBasket().get(i));
+        for (int i = 0; i < basket.getProductsInBasket().size(); i++) {
+            System.out.println(basket.getProductsInBasket().get(i));
         }
     }
 }
