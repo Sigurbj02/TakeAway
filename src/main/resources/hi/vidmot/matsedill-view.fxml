@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0"
+         prefWidth="317.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label alignment="CENTER" layoutX="87.0" layoutY="14.0" prefHeight="36.0" prefWidth="142.0" text="Matseðill">
+            <font>
+                <Font name="Constantia Italic" size="24.0"/>
+            </font>
+        </Label>
+        <ListView fx:id="fxListi" layoutX="18.0" layoutY="50.0" prefHeight="238.0" prefWidth="280.0"
+                  styleClass="listview" stylesheets="@styles.css"/>
+    </children>
+</fx:root>

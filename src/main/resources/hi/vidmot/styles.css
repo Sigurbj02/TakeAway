@@ -1,0 +1,13 @@
+.root {
+-fx-background-color: snow;
+}
+
+.button {
+-fx-background-color: #f2bdb1;
+}
+
+.listview{
+-fx-font-family: consolas;
+-fx-font-size: 12px;
+
+}
