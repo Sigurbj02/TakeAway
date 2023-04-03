@@ -2,7 +2,6 @@ package hi.vidmot;
 
 import edu.princeton.cs.algs4.StdRandom;
 import hi.vinnsla.Basket;
-import hi.vinnsla.Customer;
 import hi.vinnsla.Product;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
@@ -26,8 +25,6 @@ public class TransactionController {
 
     private Basket basket;
 
-    private Customer customer; //customer getting the delivery. Can be taken out soon and just use a getter from PontunController
-
     private OrderingController orderingController;//instance of PontunController
 
     /**
@@ -37,7 +34,6 @@ public class TransactionController {
     public void initialize() {
         basket = new Basket();
         orderingController = (OrderingController) ViewSwitcher.lookup(View.ORDERING);
-        customer = orderingController.getCustomer();
         addBasketListener();
         makeInformationBinding();
         makeBasketAndPriceBindings();
