@@ -1,5 +1,7 @@
 package hi.vinnsla;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
@@ -57,7 +59,7 @@ public class Basket extends Menu {
     /**
      * Some tests I had to do for the other project at some point. Can be deleted, but may be used for our tests
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         Menu menu = new Menu();
         Basket basket = new Basket();
         menu.setMenuData();

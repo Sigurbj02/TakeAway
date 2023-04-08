@@ -2,12 +2,12 @@ package hi.vidmot;
 
 import hi.vinnsla.Menu;
 import hi.vinnsla.Product;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-
-import java.io.IOException;
 
 /**
  * Custom component for the interface of the menu
@@ -16,7 +16,7 @@ public class MenuView extends AnchorPane {
     @FXML
     private ListView<Product> fxList;
 
-    public MenuView() {
+    public MenuView() throws IOException, URISyntaxException {
         readFXML();
         Menu m = new Menu();
         m.setMenuData();
