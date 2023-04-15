@@ -17,7 +17,11 @@ import javafx.scene.control.TextField;
  */
 public class TransactionController {
     @FXML
-    private Label fxDeliveryInformation;
+    private Label fxName;
+    @FXML
+    private Label fxAddress;
+    @FXML
+    private Label fxETA;
     @FXML
     private ListView<Product> fxBasket;
     @FXML
@@ -25,7 +29,7 @@ public class TransactionController {
 
     private Basket basket;
 
-    private OrderingController orderingController;//instance of PontunController
+    private OrderingController orderingController;
 
     /**
      * runs automatically. Initializes the basket and pontunController. Sets customer as the same as in
@@ -78,12 +82,9 @@ public class TransactionController {
      * makes a binding for information about the order and delivery and puts in a label
      */
     private void makeInformationBinding() {
-        StringBinding info = Bindings.createStringBinding(() ->
-                "Customer: \t" + orderingController.getCustomer().nameProperty().getValue() + "\n"
-                        + "Address: \t\t" + orderingController.getCustomer().addressProperty().getValue() + "\n" +
-                        "ETA: \t\t\t" + getTime()
-        );
-        fxDeliveryInformation.textProperty().bind(info);
+        fxName.textProperty().bind(orderingController.getCustomer().nameProperty());
+        fxAddress.textProperty().bind(orderingController.getCustomer().addressProperty());
+        fxETA.setText(getTime());
     }
 
     /**
