@@ -3,14 +3,16 @@ package hi.vidmot;
 import hi.vinnsla.Basket;
 import hi.vinnsla.Customer;
 import hi.vinnsla.Product;
+import java.util.Optional;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ListChangeListener;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-
-import java.util.Optional;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 /**
  * Controller for the ordering scene (Pöntunarsena). Contains action handlers, listeners and bindings and more
@@ -113,7 +115,7 @@ public class OrderingController {
      *
      * @param actionEvent - login button pressed
      */
-    public void login(ActionEvent actionEvent) {
+    public void login() {
         if (customer == null) {
             CustomerDialog d = new CustomerDialog();
             Optional<Customer> result = d.showAndWait();
@@ -134,7 +136,7 @@ public class OrderingController {
      *
      * @param actionEvent - button pressed to add to basket
      */
-    public void addToBasket(ActionEvent actionEvent) {
+    public void addToBasket() {
         if (fxMenu.getFxList().getSelectionModel().getSelectedItem() != null) {
             basket.addToBasket(fxMenu.getFxList().getSelectionModel().getSelectedItem());
         }
@@ -145,7 +147,7 @@ public class OrderingController {
      *
      * @param actionEvent - button pressed to remove from basket
      */
-    public void removeFromBasket(ActionEvent actionEvent) {
+    public void removeFromBasket() {
         if (fxBasket.getSelectionModel().getSelectedItem() != null) {
             basket.removeFromBasket(fxBasket.getSelectionModel().getSelectedItem());
         }
@@ -157,7 +159,7 @@ public class OrderingController {
      *
      * @param actionEvent button pressed to pay
      */
-    public void pay(ActionEvent actionEvent) {
+    public void pay() {
         if (!loggedIn.getValue()) {
             String message = "Log in to go on to the transaction scene";
             makeDialog(message);
