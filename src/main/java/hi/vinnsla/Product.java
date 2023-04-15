@@ -22,17 +22,10 @@ public class Product {
     }
 
     /**
-     * toString method to combine the name and price of the item into one string, like it should be
-     * displayed on the menu/in the basket. Uses tabs for alignment
+     * toString method to combine the name and price of the item into one string, but not like
+     * in ListViews
      */
     public String toString() {
-        int nameLength = product.getValue().length();
-        String string = product.getValue();
-        while (nameLength < 32) {
-            string = string.concat("\t");
-            nameLength += 8;
-        }
-        string = string.concat(price.getValue() + "");
-        return string;
+        return product.get() + ", " + price.get();
     }
 }

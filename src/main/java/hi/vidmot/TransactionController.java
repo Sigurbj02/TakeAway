@@ -4,7 +4,6 @@ import edu.princeton.cs.algs4.StdRandom;
 import hi.vinnsla.Basket;
 import hi.vinnsla.Product;
 import javafx.beans.binding.Bindings;
-import javafx.beans.binding.StringBinding;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,6 +40,7 @@ public class TransactionController {
         addBasketListener();
         makeInformationBinding();
         makeBasketAndPriceBindings();
+        fxBasket.setCellFactory(new ProductCellFactory());
     }
 
     /**

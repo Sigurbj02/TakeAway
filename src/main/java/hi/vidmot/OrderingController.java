@@ -47,6 +47,7 @@ public class OrderingController {
         setBindings();
         loginText();
         setListeners();
+        fxBasket.setCellFactory(new ProductCellFactory());
     }
 
     //getter

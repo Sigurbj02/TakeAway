@@ -21,6 +21,7 @@ public class MenuView extends AnchorPane {
         Menu m = new Menu();
         m.setMenuData();
         fxList.setItems(m.getProducts());
+        fxList.setCellFactory(new ProductCellFactory());
     }
 
     public ListView<Product> getFxList() {
