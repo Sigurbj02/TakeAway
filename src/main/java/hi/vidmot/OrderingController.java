@@ -50,12 +50,10 @@ public class OrderingController {
         fxBasket.setCellFactory(new ProductCellFactory());
     }
 
-    //getter
     public Customer getCustomer() {
         return customer;
     }
 
-    //getter
     public Basket getBasket() {
         return basket;
     }
@@ -117,7 +115,7 @@ public class OrderingController {
      */
     public void login(ActionEvent actionEvent) {
         if (customer == null) {
-            CustomerDialog d = new CustomerDialog(new Customer("", ""));
+            CustomerDialog d = new CustomerDialog();
             Optional<Customer> result = d.showAndWait();
             if (result.isPresent()) {
                 customer = result.get();

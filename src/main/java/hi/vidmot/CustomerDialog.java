@@ -10,7 +10,6 @@ import javafx.util.Callback;
 import java.io.IOException;
 
 public class CustomerDialog extends Dialog<Customer> {
-
     @FXML
     private TextField fxName;
     @FXML
@@ -19,9 +18,9 @@ public class CustomerDialog extends Dialog<Customer> {
     private ButtonType fxOK;
     private Customer customer;//the customer who signs up
 
-    public CustomerDialog(Customer customer) {
+    public CustomerDialog() {
         setDialogPane(initialization());
-        this.customer = customer;
+        this.customer = new Customer("", "");
         setOKRule();
         setBinding();
         setResultConverter();
