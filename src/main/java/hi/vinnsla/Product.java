@@ -17,6 +17,10 @@ public class Product {
         this.price.set(price);
     }
 
+    public String getProduct() {
+        return product.get();
+    }
+
     public int getPrice() {
         return price.get();
     }
