@@ -18,7 +18,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void nameProperty() {
+    public void testNameProperty() {
         assertNotNull(customer.nameProperty());
         assertEquals("James", customer.nameProperty().get());
         customer.nameProperty().set("Anna");
@@ -26,7 +26,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void addressProperty() {
+    public void testAddressProperty() {
         assertNotNull(customer.addressProperty());
         assertEquals("12 Oak Lane", customer.addressProperty().get());
         customer.addressProperty().set("123 Sesame Street");
