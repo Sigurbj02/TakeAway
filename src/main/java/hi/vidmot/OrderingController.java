@@ -109,8 +109,6 @@ public class OrderingController {
      * action handler. Opens CustomerDialog if there is no customer in the system where a new customer can be
      * put in the system. Opens a LoginDialog if there is a customer in the system where the user needs to type
      * in a password to log in.
-     *
-     * @param actionEvent - login button pressed
      */
     public void login() {
         if (customer == null) {
@@ -130,8 +128,6 @@ public class OrderingController {
 
     /**
      * Action handler. If something in the listview for the Menu is selected it is put in the basket
-     *
-     * @param actionEvent - button pressed to add to basket
      */
     public void addToBasket() {
         if (fxMenu.getFxList().getSelectionModel().getSelectedItem() != null) {
@@ -141,8 +137,6 @@ public class OrderingController {
 
     /**
      * Action handler. If something in the listview for the basket is selected it is removed from the basket
-     *
-     * @param actionEvent - button pressed to remove from basket
      */
     public void removeFromBasket() {
         if (fxBasket.getSelectionModel().getSelectedItem() != null) {
@@ -153,8 +147,6 @@ public class OrderingController {
     /**
      * action handler. If the customer is signed in it switches to the transaction scene, otherwise a dialog
      * appears telling the user to log in to continue
-     *
-     * @param actionEvent button pressed to pay
      */
     public void pay() {
         if (!loggedIn.getValue()) {

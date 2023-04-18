@@ -1,9 +1,11 @@
 package hi.vinnsla;
 
-import java.io.InputStream;
-import java.util.Scanner;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 public class Menu {
     private ObservableList<Product> products = FXCollections.observableArrayList();//throw an exception when it's empty
@@ -14,7 +16,7 @@ public class Menu {
      */
     public void setMenuData() {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("menus.csv");
-        Scanner scanner = new Scanner(inputStream);
+        Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8);
         while (scanner.hasNext()) {
             String[] line = scanner.nextLine().split(", ");
             if (line[0].length() <= 30) {
