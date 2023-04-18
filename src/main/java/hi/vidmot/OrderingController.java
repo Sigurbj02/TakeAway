@@ -3,16 +3,13 @@ package hi.vidmot;
 import hi.vinnsla.Basket;
 import hi.vinnsla.Customer;
 import hi.vinnsla.Product;
-import java.util.Optional;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
+import java.util.Optional;
 
 /**
  * Controller for the ordering scene (Pöntunarsena). Contains action handlers, listeners and bindings and more
@@ -64,8 +61,8 @@ public class OrderingController {
      * sets listeners for text on the login button and for items in the listview for the basket
      */
     private void setListeners() {
-        basket.getProductsInBasket().addListener((ListChangeListener<? super Product>) change -> {
-            fxBasket.setItems(basket.getProductsInBasket());
+        basket.getProducts().addListener((ListChangeListener<? super Product>) change -> {
+            fxBasket.setItems(basket.getProducts());
         });
         loggedIn.addListener((observable, oldVal, newVal) -> {
             loginText();

@@ -1,11 +1,11 @@
 package hi.vinnsla;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class Basket extends Menu {
     private IntegerProperty totalPrice = new SimpleIntegerProperty();
@@ -14,11 +14,6 @@ public class Basket extends Menu {
         totalPrice.setValue(0);
         addListener();
     }
-
-    public ObservableList<Product> getProductsInBasket() {
-        return getProducts();
-    }
-
 
     public IntegerProperty totalPriceProperty() {
         return totalPrice;
@@ -73,8 +68,8 @@ public class Basket extends Menu {
         basket.addToBasket(menu.getProducts().get(9));
 
         System.out.println("this is how the basket looks:");
-        for (int i = 0; i < basket.getProductsInBasket().size(); i++) {
-            System.out.println(basket.getProductsInBasket().get(i));
+        for (int i = 0; i < basket.getProducts().size(); i++) {
+            System.out.println(basket.getProducts().get(i));
         }
     }
 }

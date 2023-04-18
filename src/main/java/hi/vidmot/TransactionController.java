@@ -65,8 +65,8 @@ public class TransactionController {
      * makes a listener which changes the listview when the contents of the basket change
      */
     private void addBasketListener() {
-        basket.getProductsInBasket().addListener((ListChangeListener<? super Product>) change -> {
-            fxBasket.setItems(basket.getProductsInBasket());
+        basket.getProducts().addListener((ListChangeListener<? super Product>) change -> {
+            fxBasket.setItems(basket.getProducts());
         });
     }
 
@@ -74,7 +74,7 @@ public class TransactionController {
      * makes a binding between the baskets in the transaction scene and the ordering scene and for the total price
      */
     private void makeBasketAndPriceBindings() {
-        Bindings.bindContent(basket.getProductsInBasket(), orderingController.getBasket().getProductsInBasket());
+        Bindings.bindContent(basket.getProducts(), orderingController.getBasket().getProducts());
         fxTotalPrice.textProperty().bind(basket.totalPriceProperty().asString().concat(" kr."));
     }
 
@@ -95,7 +95,7 @@ public class TransactionController {
     public void confirm(ActionEvent actionEvent) {
         String message = "The order has been confirmed";
         orderingController.makeDialog(message);
-        orderingController.getBasket().getProductsInBasket().clear();
+        orderingController.getBasket().getProducts().clear();
         ViewSwitcher.switchTo(View.ORDERING);
     }
 
