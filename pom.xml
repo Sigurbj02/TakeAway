@@ -115,18 +115,6 @@
                             <noHeaderFiles>true</noHeaderFiles>
                         </configuration>
                     </execution>
-                    <!-- Configuration for debugging -->
-
-                    <execution>
-                        <id>debug</id>
-                        <configuration>
-                            <options>
-                                <option>-agentlib:jdwp=transport=dt_socket,server=n,address=localhost:8000,suspend=y
-                                </option>
-                            </options>
-                            <mainClass>hi.vidmot.TakeAwayApplication</mainClass>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
         </plugins>
