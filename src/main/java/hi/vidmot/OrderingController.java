@@ -112,8 +112,8 @@ public class OrderingController {
      */
     public void login() {
         if (customer == null) {
-            CustomerDialog d = new CustomerDialog();
-            Optional<Customer> result = d.showAndWait();
+            CustomerDialog customerDialog = new CustomerDialog();
+            Optional<Customer> result = customerDialog.showAndWait();
             if (result.isPresent()) {
                 customer = result.get();
                 loggedIn.set(true);
