@@ -14,22 +14,23 @@ public class MenuTest {
     @Before
     public void setUp() throws Exception {
         menu = new Menu();
-        assertNotNull(menu);
     }
 
     @Test
     public void testSetMenuData() {
         menu.setMenuData();
-        assertFalse(menu.getProducts().isEmpty());
-        assertEquals("Pestópasta", menu.getProducts().get(0).getProduct());
-        assertEquals(menu.getProducts().get(0).getPrice(), 10900);
+        assertFalse("The menu should not be empty", menu.getProducts().isEmpty());
+        assertEquals("The name of the first product on the menu should be Pestópasta", "Pestópasta", menu.getProducts().get(0).getProduct());
+        assertEquals("The price of the first product on the menu should be 10900", menu.getProducts().get(0).getPrice(), 10900);
         int lastMenuIndex = menu.getProducts().size() - 1;
-        assertEquals("asksk", "pylsa í brauði", menu.getProducts().get(lastMenuIndex).getProduct());
-        assertEquals("sdf ", 3400, menu.getProducts().get(lastMenuIndex).getPrice());
+        assertEquals("The last item on the menu should be pylsa í brauði", "pylsa í brauði", menu.getProducts().get(lastMenuIndex).getProduct());
+        assertEquals("The last item on the menu should cost 3400 ", 3400, menu.getProducts().get(lastMenuIndex).getPrice());
     }
 
     @Test
     public void getProducts() {
-        assert (menu.getProducts().equals(products));
+        assertEquals("The items on the empty menu should have the same string value as an empty ObservableList<Product>", menu.getProducts().toString(), products.toString());
+        menu.setMenuData();
+        assertNotEquals("The items on the menu should not have the same string value as an empty ObservableList<Product>", menu.getProducts(), products);
     }
 }

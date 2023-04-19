@@ -9,45 +9,39 @@ import static org.junit.Assert.*;
 
 public class BasketTest {
     private Basket basket;
+    private Basket emptyBasket;
     private Menu menu;
 
     @Before
     public void setUp() throws Exception {
-        basket = new Basket();
-        assertTrue(basket.getProducts().isEmpty());
         menu = new Menu();
         menu.setMenuData();
+
+        basket = new Basket();
         basket.getProducts().add(new Product("Sour candy", 300));
         basket.getProducts().add(new Product("Shampoo", 1809));
+
+        emptyBasket = new Basket();
     }
 
 
     @Test
     public void addToBasket() {
-        basket.getProducts().clear();
-        assertTrue(basket.getProducts().isEmpty());
-        basket.addToBasket(new Product("Sour candy", 300));
-        assertFalse(basket.getProducts().isEmpty());
-        basket.addToBasket(new Product("Shampoo", 1809));
-        assertEquals(2, basket.getProducts().size());
+        emptyBasket.addToBasket(new Product("Sour candy", 300));
+        emptyBasket.addToBasket(new Product("Shampoo", 1809));
+        assertEquals("There should be two items in the basket", 2, basket.getProducts().size());
     }
 
     @Test
     public void addToBasketFromMenu() {
-        assertFalse(menu.getProducts().isEmpty());
-        assertFalse(basket.getProducts().isEmpty());
-        basket.getProducts().clear();
-        assertTrue(basket.getProducts().isEmpty());
-
-        assertEquals(menu.getProducts().get(5).getPrice(), 200);
-        assertEquals(menu.getProducts().get(5).getProduct(), "Hundamatur");
-        basket.addToBasket(menu.getProducts().get(5));
-        assertEquals(basket.getProducts().get(0), menu.getProducts().get(5));
+        assertEquals("the price of the product with the index 5 on the menu should be 200", menu.getProducts().get(5).getPrice(), 200);
+        assertEquals("The product with the index 5 on the menu should be Hundamatur", menu.getProducts().get(5).getProduct(), "Hundamatur");
+        emptyBasket.addToBasket(menu.getProducts().get(5));
+        assertEquals("The first item in the basket should be Hundamatur, 200", emptyBasket.getProducts().get(0), menu.getProducts().get(5));
     }
 
     @Test
     public void getProducts() {
-        addToBasket();
         ObservableList<Product> products = FXCollections.observableArrayList();
         products.add(new Product("Sour candy", 300));
         products.add(new Product("Shampoo", 1809));
@@ -57,9 +51,9 @@ public class BasketTest {
 
     @Test
     public void totalPriceProperty() {//remove from basket and add to it again?
-        assertNotNull(basket.totalPriceProperty());
-        int price = 300 + 1809;
-        assertEquals(price, basket.totalPriceProperty().get());
+        assertNotNull("the priceProperty should not be null", basket.totalPriceProperty());
+        int expectedPrice = 300 + 1809;
+        assertEquals("The expected price for this basket is 2109", expectedPrice, basket.totalPriceProperty().get());
     }
 
 

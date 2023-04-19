@@ -13,23 +13,21 @@ public class CustomerTest {
     @Before
     public void createCustomer() throws Exception {
         customer = new Customer("James", "12 Oak Lane");
-        assertEquals("James", customer.nameProperty().get());
-        assertEquals("12 Oak Lane", customer.addressProperty().get());
     }
 
     @Test
     public void testNameProperty() {
-        assertNotNull(customer.nameProperty());
-        assertEquals("James", customer.nameProperty().get());
+        assertNotNull("the nameProperty of the customer should not be null", customer.nameProperty());
+        assertEquals("The name of the customer should be James", "James", customer.nameProperty().get());
         customer.nameProperty().set("Anna");
-        assertEquals("Anna", customer.nameProperty().get());
+        assertEquals("The name of the customer should be Anna", "Anna", customer.nameProperty().get());
     }
 
     @Test
     public void testAddressProperty() {
-        assertNotNull(customer.addressProperty());
-        assertEquals("12 Oak Lane", customer.addressProperty().get());
+        assertNotNull("the addressProperty of the customer should not be null", customer.addressProperty());
+        assertEquals("The address of the customer should be 12 Oak Lane", "12 Oak Lane", customer.addressProperty().get());
         customer.addressProperty().set("123 Sesame Street");
-        assertEquals("123 Sesame Street", customer.addressProperty().get());
+        assertEquals("The address of the customer should be 123 Sesame Street", "123 Sesame Street", customer.addressProperty().get());
     }
 }
