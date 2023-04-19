@@ -30,8 +30,8 @@ public class CustomerDialog extends Dialog<Customer> {
      * Sets binding between the dialog and the backend
      */
     private void setBinding() {
-        fxName.textProperty().bindBidirectional(customer.nameProperty());
-        fxAddress.textProperty().bindBidirectional(customer.addressProperty());
+        customer.nameProperty().bind(fxName.textProperty());
+        customer.addressProperty().bind(fxAddress.textProperty());
     }
 
     /**
