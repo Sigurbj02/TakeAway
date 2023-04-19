@@ -119,12 +119,21 @@ public class OrderingController {
                 loggedIn.set(true);
             }
         } else if (!loggedIn.getValue()) {
-            LoginDialog a = new LoginDialog(customer);
-            if (a.passwordIsValid()) {
-                loggedIn.set(true);
-            }
+            openLoginDialog();
         }
     }
+
+    private void openLoginDialog() {
+        TextInputDialog logIn = new TextInputDialog();
+        logIn.setTitle("Sign in");
+        logIn.setHeaderText("Sign in as " + customer.nameProperty().getValue());
+        logIn.setContentText("Password: ");
+        Optional<String> result = logIn.showAndWait();
+        if (result.isPresent() && !result.get().equals("")) {
+            loggedIn.set(true);
+        }
+    }
+
 
     /**
      * Action handler. If something in the listview for the Menu is selected it is put in the basket
