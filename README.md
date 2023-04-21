@@ -13,14 +13,14 @@ The jar file that was created from the maven package
 command can be run easiy with the help of the runjar.cmd
 file:
 
- - $ source runjar.cmd
+ - `$ source runjar.cmd`
 
 ## Supported Maven goals
- -  'mvn javafx:run' (run fxml program)
- -  'mvn compile' (build)
- -  'mvn clean' (remove target/ directory)
- -  'mvn package' (create jar file to distribute)
- -  'mvn site' (generate documentation)
+ -  `mvn javafx:run` (run fxml program)
+ -  `mvn compile` (build)
+ -  `mvn clean` (remove target/ directory)
+ -  `mvn package` (create jar file to distribute)
+ -  `mvn site` (generate documentation)
 
 
 ## Other:
