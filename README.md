@@ -1,8 +1,10 @@
-# some documentation for this program
+# TakeAway
+Project from a software development course at the University of Iceland that includes a graphical user interface. It resembles a simple system where people can order food.
 
 
-## translations for some of the names:
- - vidmot: more or less frontend/inteface
+
+## Translations for directory names:
+ - vidmot: inteface
  - vinnsla: logic
 
 
@@ -13,30 +15,14 @@ file:
 
  - $ source runjar.cmd
 
-## How the program works:
-After starting, you are presented with the menu. Select
-an item from the list below the word Menu you wish to
-order and click on the "Add to basket"
-button to have it available during the checkout process.
-If you decide that you do not want one of the items, select
-the item in question from the basket and click on "Remove
-from basket" to have it disappear. Before being able to
-continue with the payment process, you have to click on "
-Sign up". Enter your name and address in the corresponding
-fields and click "OK". Once you are happy with the selection,
-click on "Pay" to view a summary of the entered information.
-Clicking on "Confirm" then finishes the ordering process by
-clearing the basket and taking the user back to the main
-screen.
+## Supported Maven goals
+ -  'mvn javafx:run' (run fxml program)
+ -  'mvn compile' (build)
+ -  'mvn clean' (remove target/ directory)
+ -  'mvn package' (create jar file to distribute)
+ -  'mvn site' (generate documentation)
 
 
 ## Other:
  - This project is licensed under: [license](LICENSE.md)
- - This project's structure looks like: [UML](src/site/markdown/classDiagram.jpg)
- - supported maven goals are:
-   -  'mvn javafx:run' (run fxml program)
-   - $ mvn compile (build)
-   - $ mvn clean (remove target/ directory)
-   - $ mvn package (create jar file to distribute)
-   - $ mvn site (generate documentation)
-vidmot "listening" to actions done by the user in the GUI)
+ - Further documentation: [documentation](src/site/markdown/documentation.md)

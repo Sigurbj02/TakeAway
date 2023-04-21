@@ -17,6 +17,14 @@ clearing the basket and taking the user back to the main
 screen.
 
 
+## How to run the jar file:
+The jar file that was created from the maven package
+command can be run easiy with the help of the runjar.cmd
+file:
+
+ - 'source runjar.cmd'
+
+
 ## Design pattern:
 We use the Observer behavioural pattern, by using listeners, event handlers and bindings. This can be seen in several places, usually to make the interface reflect changes as they happen
 
