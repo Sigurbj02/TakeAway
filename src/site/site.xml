@@ -2,6 +2,8 @@
     <body>
         <menu name="Overview">
             <item name="Documentation" href="documentation.html" />
+            <item name="README" href="README.html" />
+            <item name="LICENSE" href="LICENSE.html" />
         </menu>
         <menu ref="reports" />
     </body>
