@@ -1,17 +1,5 @@
 # some documentation for this program
 
-## below here will be what we want to do / change
-- [] refactor loading of the product data out into a new file
-  - [] see Menu.java
-- [] generate / improve the class diagram for this project
-- [] maybe change some of the method names
-- [] write some tests; more specifically for:
-  - [] for example for basket class
-- [] generate a jar file + executable shell script to make it easy to run
-- [] document more (also how to run the program from the jar file)
--
-
-## below here will be what we have already done
 
 ## translations for some of the names:
  - vidmot: more or less frontend/inteface
@@ -44,3 +32,39 @@ When using single-direction bindings, the observer is bound to the observable, u
 Event handlers i.e. in OrderingController and TransactionController observe objects in the GUI and react when they are interacted with
 The object in the interface which the handler is put on is the observable
 The observable is presumably within the code of the handler, whatever is updated
+
+
+## How to run the jar file:
+The jar file that was created from the maven package
+command can be run easiy with the help of the runjar.cmd
+file:
+
+ - $ source runjar.cmd
+
+## How the program works:
+After starting, you are presented with the menu. Select
+an item from the list below the word Menu you wish to
+order and click on the "Add to basket"
+button to have it available during the checkout process.
+If you decide that you do not want one of the items, select
+the item in question from the basket and click on "Remove
+from basket" to have it disappear. Before being able to
+continue with the payment process, you have to click on "
+Sign up". Enter your name and address in the corresponding
+fields and click "OK". Once you are happy with the selection,
+click on "Pay" to view a summary of the entered information.
+Clicking on "Confirm" then finishes the ordering process by
+clearing the basket and taking the user back to the main
+screen.
+
+
+## Other:
+ - This project is licensed under: [license](LICENSE.md)
+ - This project's structure looks like: [UML](src/site/diagram.png)
+ - supported maven goals are:
+   - $ mvn fxml:run (run fxml program)
+   - $ mvn compile (build)
+   - $ mvn clean (remove target/ directory)
+   - $ mvn package (create jar file to distribute)
+   - $ mvn site (generate documentation)
+vidmot "listening" to actions done by the user in the GUI)

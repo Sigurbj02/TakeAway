@@ -8,6 +8,22 @@
     <artifactId>vidmot</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>TakeAway</name>
+    <description>
+        Project from a software development course at the University of Iceland
+        that includes a graphical user interface. It resembles a simple system where
+        people can order food.
+    </description>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://mit-license.org/</url>
+        </license>
+    </licenses>
+    <organization>
+        <name>University of Iceland</name>
+        <url>https://www.hi.is</url>
+    </organization>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -133,6 +149,10 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.7.1</version>
             </plugin>
         </plugins>
     </build>
