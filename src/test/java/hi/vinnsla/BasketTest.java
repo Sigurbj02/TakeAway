@@ -24,7 +24,6 @@ public class BasketTest {
         emptyBasket = new Basket();
     }
 
-
     @Test
     public void addToBasket() {
         emptyBasket.addToBasket(new Product("Sour candy", 300));
@@ -47,15 +46,13 @@ public class BasketTest {
         products.add(new Product("Shampoo", 1809));
         assertEquals(products.toString(), basket.getProducts().toString());
     }
-
-
+    
     @Test
-    public void totalPriceProperty() {//remove from basket and add to it again?
+    public void totalPriceProperty() {
         assertNotNull("the priceProperty should not be null", basket.totalPriceProperty());
         int expectedPrice = 300 + 1809;
         assertEquals("The expected price for this basket is 2109", expectedPrice, basket.totalPriceProperty().get());
     }
-
 
     @Test
     public void removeFromBasket() {

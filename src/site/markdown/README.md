@@ -67,4 +67,3 @@ screen.
    - $ mvn clean (remove target/ directory)
    - $ mvn package (create jar file to distribute)
    - $ mvn site (generate documentation)
-     vidmot "listening" to actions done by the user in the GUI)
