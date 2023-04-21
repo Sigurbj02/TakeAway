@@ -60,7 +60,7 @@ screen.
 
 ## Other:
  - This project is licensed under: [license](LICENSE.md)
- - This project's structure looks like: [UML](src/site/diagram.png)
+ - This project's structure looks like: [UML](src/site/markdown/classDiagram.jpg)
  - supported maven goals are:
    - $ mvn fxml:run (run fxml program)
    - $ mvn compile (build)
