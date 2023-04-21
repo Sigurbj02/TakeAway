@@ -1,5 +1,23 @@
+# Documentation
 
-## design pattern:
+## How the program works:
+After starting, you are presented with the menu. Select
+an item from the list below the word Menu you wish to
+order and click on the "Add to basket"
+button to have it available during the checkout process.
+If you decide that you do not want one of the items, select
+the item in question from the basket and click on "Remove
+from basket" to have it disappear. Before being able to
+continue with the payment process, you have to click on "
+Sign up". Enter your name and address in the corresponding
+fields and click "OK". Once you are happy with the selection,
+click on "Pay" to view a summary of the entered information.
+Clicking on "Confirm" then finishes the ordering process by
+clearing the basket and taking the user back to the main
+screen.
+
+
+## Design pattern:
 We use the Observer behavioural pattern, by using listeners, event handlers and bindings. This can be seen in several places, usually to make the interface reflect changes as they happen
 
 ### Listeners
@@ -19,6 +37,6 @@ Event handlers i.e. in OrderingController and TransactionController observe obje
 The object in the interface which the handler is put on is the observable
 The observable is presumably within the code of the handler, whatever is updated
 
-
+## UML class diagram
 
 ![Design](classDiagram.jpg)
