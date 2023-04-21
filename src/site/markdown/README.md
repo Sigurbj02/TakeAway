@@ -1,6 +1,5 @@
 # some documentation for this program
 
-
 ## translations for some of the names:
 - vidmot: more or less frontend/inteface
 - vinnsla: logic
